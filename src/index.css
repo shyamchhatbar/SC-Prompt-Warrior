@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-50: #f4fbf7;
+  --color-brand-100: #e5f6ed;
+  --color-brand-200: #c0ebd4;
+  --color-brand-300: #8ed9b3;
+  --color-brand-400: #55bf8c;
+  --color-brand-500: #32a36e;
+  --color-brand-600: #238356;
+  --color-brand-700: #1d6946;
+  --color-brand-800: #1a5439;
+  --color-brand-900: #174530;
+  --color-brand-950: #0b261b;
+  
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-slate-950 text-slate-100 antialiased;
+  }
+}
+
+/* Custom premium scrollbar tweaks */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-950;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-800 rounded-full hover:bg-slate-700 transition-colors;
+}
+
+/* Style range input thumbs to match brand color */
+input[type="range"]::-webkit-slider-thumb {
+  @apply bg-brand-500 border border-brand-400 rounded-full h-4.5 w-4.5 shadow-md cursor-pointer transition-all active:scale-125;
+}
+input[type="range"]::-moz-range-thumb {
+  @apply bg-brand-500 border border-brand-400 rounded-full h-4.5 w-4.5 shadow-md cursor-pointer transition-all active:scale-125;
+}
